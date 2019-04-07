@@ -5,7 +5,7 @@
 
 #Input: [1,3,5,6], 5
 #Output: 2
-#
+#二分查找
 
 
 class Solution {
@@ -14,3 +14,25 @@ class Solution {
         return index >= 0?index:-index - 1;
     }
 }
+
+#注 JAVA JDK 的源码
+ // Like public version, but without range checks.
+    private static int binarySearch0(int[] a, int fromIndex, int toIndex, int key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            int midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+
+
