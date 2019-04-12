@@ -28,3 +28,14 @@ class Solution {
         return res;
     }
 }
+
+
+####python
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        nums = ''.join(str(num) for num in digits)
+        return map(int, str(int(nums)+1))
