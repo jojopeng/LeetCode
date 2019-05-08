@@ -18,3 +18,11 @@ class Solution {
         return !(n % 4 == 0);
     }
 }
+
+/*2. update */
+class Solution {
+    public boolean canWinNim(int n) {
+        boolean[] res = new boolean[]{true,true,true,false};
+        return res[(n-1)%4];
+    }
+}
